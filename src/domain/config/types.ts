@@ -9,7 +9,8 @@ const TYPES = {
         IUsersRepository: Symbol.for('IUsersRepository'),
     },
     mappers: {
-        CreateUserMapper: Symbol.for('CreateUserMapper'),
+        IUserMapper: Symbol.for('IUserMapper'),
+        IUserCreateMapper: Symbol.for('IUserCreateMapper'),
     },
 };
 

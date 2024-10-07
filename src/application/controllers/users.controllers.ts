@@ -4,7 +4,7 @@ import { NetworkResponse, STATUS_CODE } from "src/domain/entities/network_respon
 import IUsersController from "src/interface/controllers/users.controllers.js";
 import ICreateUserUseCases from "src/interface/usercases/users/create_user.usecases.js";
 import ICreateUserMapper from "src/interface/mappers/create_user.mappers.js";
-import CreateUserDto from "src/domain/dtos/create_user.dtos.js";
+import CreateUserDto from "src/domain/dtos/user_create.dtos.js";
 import { container } from "src/domain/config/dependencies.config.js";
 import TYPES from "src/domain/config/types.js";
 

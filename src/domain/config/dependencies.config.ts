@@ -8,9 +8,10 @@ import ICreateUserUseCases from "src/interface/usercases/users/create_user.useca
 
 import IUsersRepository from "src/interface/repositories/users.repositories.js";
 import UsersRepository from "src/infrastructure/repositories/users.repositories.js";
-import CreateUserMapper from "src/domain/mappers/create_user.mappers.js";
 import UsersController from "src/application/controllers/users.controllers.js";
 import CreateUserUseCase from "../usercases/users/create_user.usercase.js";
+import IUserMapper from "src/interface/mappers/user.mappers.js";
+import UserMapper from "../mappers/user.mappers.js";
 
 export const container = new Container();
 
@@ -41,5 +42,5 @@ function injectRepositories(){
 
 /* Mappers */
 function injectMappers(){
-    container.bind<CreateUserMapper>(TYPES.mappers.CreateUserMapper).to(CreateUserMapper);
+    container.bind<IUserMapper>(TYPES.mappers.IUserMapper).to(UserMapper);
 }

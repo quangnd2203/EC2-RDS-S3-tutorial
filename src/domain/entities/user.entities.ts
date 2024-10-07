@@ -2,7 +2,7 @@ export default class User {
     id: string;
     email: string;
     password: string;
-    avatar: string;
+    avatar?: string;
     createdAt?: Date;
     updatedAt?: Date;
 
@@ -17,7 +17,7 @@ export default class User {
         id: string;
         email: string;
         password: string;
-        avatar: string;
+        avatar?: string;
         createdAt?: Date;
         updatedAt?: Date;
     }) {

@@ -2,39 +2,40 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from 'src/domain/config/database.config.js';
 import User from 'src/domain/entities/user.entities.js';
 
-// Định nghĩa class Model cho User với TypeScript
 class UserModel extends Model<User> implements User {
-    id: string;
-    name: string;
-    createdAt: Date;
-    updatedAt: Date;
-
+  id: string;
+  email: string;
+  password: string;
+  avatar?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
-// Định nghĩa bảng User
 UserModel.init(
   {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.UUIDV4,
       autoIncrement: true,
       primaryKey: true,
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     email: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     sequelize,
     tableName: 'users',
+    timestamps: true,
   }
 );
 
