@@ -1,9 +1,10 @@
 import * as dotenv from 'dotenv';
-import { inject } from './application/config/dependencies.config.js';
-import createAPI from './application/config/api.config.js';
-import connectDatabase from './application/config/database.config.js';
-import logger from './application/config/logger.config.js';
-import initSwagger from './application/config/swagger.js';
+import createAPI from './domain/config/api.config.js';
+import { connectDatabase } from './domain/config/database.config.js';
+import logger from './domain/config/logger.config.js';
+import initSwagger from './domain/config/swagger.js';
+import { inject } from './domain/config/dependencies.config.js';
+
 
 initSwagger().then(() => {
 

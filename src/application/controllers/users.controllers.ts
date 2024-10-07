@@ -3,10 +3,10 @@ import "reflect-metadata";
 import { NetworkResponse, STATUS_CODE } from "src/domain/entities/network_response.entities.js";
 import IUsersController from "src/interface/controllers/users.controllers.js";
 import ICreateUserUseCases from "src/interface/usercases/users/create_user.usecases.js";
-import TYPES from "../config/types.js";
-import { container } from "../config/dependencies.config.js";
 import ICreateUserMapper from "src/interface/mappers/create_user.mappers.js";
 import CreateUserDto from "src/domain/dtos/create_user.dtos.js";
+import { container } from "src/domain/config/dependencies.config.js";
+import TYPES from "src/domain/config/types.js";
 
 @injectable()
 export default class UsersController implements IUsersController {

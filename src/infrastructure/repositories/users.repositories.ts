@@ -1,12 +1,12 @@
 import IUsersRepository from "src/interface/repositories/users.repositories.js";
 
 import { injectable } from "inversify";
-import TYPES from "src/application/config/types.js";
-import { container } from "src/application/config/dependencies.config.js";
 import CreateUserDto from "src/domain/dtos/create_user.dtos.js";
 import User from "src/domain/entities/user.entities.js";
 import UserModel from "../models/user.models.js";
 import ICreateUserMapper from "src/interface/mappers/create_user.mappers.js";
+import { container } from "src/domain/config/dependencies.config.js";
+import TYPES from "src/domain/config/types.js";
 
 @injectable()
 export default class UsersRepository implements IUsersRepository {

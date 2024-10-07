@@ -1,16 +1,47 @@
-import { model, Schema, Types } from 'mongoose'
-import User from 'src/domain/entities/user.entities.js'
-import mongooseTransformId from '../database_plugins/mongoose_transform_id.plugins.js';
+import { DataTypes, Model } from 'sequelize';
+import sequelize from 'src/domain/config/database.config.js';
+import User from 'src/domain/entities/user.entities.js';
 
-const userSchema = new Schema<User>(
-    {
-        name: {type: String, required: true},
-    }, 
-    {
-        timestamps: true,
-    }
-)
+// Định nghĩa class Model cho User với TypeScript
+class UserModel extends Model<User> implements User {
+    id: string;
+    name: string;
+    createdAt: Date;
+    updatedAt: Date;
 
-userSchema.plugin(mongooseTransformId);
+}
 
-export default model<User>('User', userSchema);
+// Định nghĩa bảng User
+UserModel.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    tableName: 'users',
+  }
+);
+
+
+(async () => {
+  await UserModel.sync({ alter: true });
+  console.log('User table synced successfully.');
+})();
+
+export default UserModel;

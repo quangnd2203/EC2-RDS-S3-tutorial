@@ -1,12 +1,12 @@
 import express, { Application } from "express";
 import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
-import Routers from "../routers/routes.js";
+import Routers from "src/application/routers/routes.js";
 import { NetworkResponse, STATUS_CODE } from "src/domain/entities/network_response.entities.js";
-import accessInfoMiddleware from "../middlewares/accessInfo.middlewares.js";
-import responseInfoMiddleware from "../middlewares/responseInfo.middlewares.js";
 
-import swaggerDefinition from 'swagger/combined.json';
+import swaggerDefinition from 'swagger/combined.json' assert { type: "json" };
+import accessInfoMiddleware from "src/application/middlewares/accessInfo.middlewares.js";
+import responseInfoMiddleware from "src/application/middlewares/responseInfo.middlewares.js";
 
 export default function createAPI(): Application {
     const api: Application = express();

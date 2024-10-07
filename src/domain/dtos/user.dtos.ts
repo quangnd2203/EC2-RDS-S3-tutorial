@@ -1,4 +1,4 @@
-export default class User {
+export default class UserDto {
     id: string;
     email: string;
     password: string;

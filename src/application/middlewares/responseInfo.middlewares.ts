@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import logger from '../config/logger.config.js';
+import logger from 'src/domain/config/logger.config.js';
 
 export default async function responseInfoMiddleware(req: Request, res: Response, next: NextFunction){
     const originalSend = res.send;
