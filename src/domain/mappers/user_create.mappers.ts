@@ -1,5 +1,3 @@
-import IUserMapper from "src/interface/mappers/user.mappers.js";
-import UserDto from "../dtos/user.dtos.js";
 import User from "../entities/user.entities.js";
 import { injectable } from "inversify";
 import IUserCreateMapper from "src/interface/mappers/user_create.mappers.js";

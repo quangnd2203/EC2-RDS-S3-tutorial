@@ -1,7 +1,7 @@
 export default class UserCreateDto {
     id: string;
-    email: string;
-    password: string;
+    email?: string;
+    password?: string;
     avatar?: string;
     createdAt?: Date;
     updatedAt?: Date;
@@ -15,8 +15,8 @@ export default class UserCreateDto {
         updatedAt,
     }: {
         id: string;
-        email: string;
-        password: string;
+        email?: string;
+        password?: string;
         avatar?: string;
         createdAt?: Date;
         updatedAt?: Date;

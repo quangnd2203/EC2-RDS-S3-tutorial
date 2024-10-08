@@ -2,23 +2,31 @@ import { injectable, inject } from "inversify";
 import "reflect-metadata";
 import { NetworkResponse, STATUS_CODE } from "src/domain/entities/network_response.entities.js";
 import IUsersController from "src/interface/controllers/users.controllers.js";
-import ICreateUserUseCases from "src/interface/usercases/users/create_user.usecases.js";
-import ICreateUserMapper from "src/interface/mappers/create_user.mappers.js";
-import CreateUserDto from "src/domain/dtos/user_create.dtos.js";
-import { container } from "src/domain/config/dependencies.config.js";
 import TYPES from "src/domain/config/types.js";
+import UserCreateDto from "src/domain/dtos/user_create.dtos.js";
+import UserDto from "src/domain/dtos/user.dtos.js";
+import IUserUseCases from "src/interface/usercases/user.usecases.js";
+import { Request } from "express";
 
 @injectable()
 export default class UsersController implements IUsersController {
-    @inject(TYPES.useCases.ICreateUserUseCase) private createUserUseCase: ICreateUserUseCases;
+    @inject(TYPES.useCases.IUserUseCases) private userUseCases: IUserUseCases;
 
-    async create(request: CreateUserDto): Promise<NetworkResponse<CreateUserDto>> {
+    async create(request: UserCreateDto): Promise<NetworkResponse<UserDto>> {
         try {
-            const user = await this.createUserUseCase.execute(request);
-            const response = container.get<ICreateUserMapper>(TYPES.mappers.CreateUserMapper).toResponse(user);
-            return NetworkResponse.success<CreateUserDto>(response);
+            const userDto = await this.userUseCases.create(request);
+            return NetworkResponse.success<UserDto>(userDto);
         } catch (e) {
             return NetworkResponse.fromErrors(STATUS_CODE.bad_request, e.message || 'create_user_error');
+        }
+    }
+
+    async updateAvatar(id: string, request: Request): Promise<NetworkResponse<UserDto>> {
+        try {
+            const userDto = await this.userUseCases.updateAvatar(id, request);
+            return NetworkResponse.success<UserDto>(userDto);
+        } catch (e) {
+            return NetworkResponse.fromErrors(STATUS_CODE.bad_request, e.message || 'update_avatar_error');
         }
     }
 }

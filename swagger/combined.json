@@ -34,9 +34,13 @@
             "schema": {
               "type": "object",
               "properties": {
-                "name": {
+                "email": {
                   "type": "string",
-                  "example": "John Doe"
+                  "example": "example@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "password"
                 }
               }
             }
@@ -50,11 +54,78 @@
                 "code": 200,
                 "message": null,
                 "data": {
-                  "id": "66a990f9351bd3041037330a",
-                  "name": "John Doe",
-                  "createdAt": "2022-01-01T00:00:00.000Z",
-                  "updatedAt": "2022-01-01T00:00:00.000Z"
+                  "id": "b17b6135-7b85-49b1-acc4-9204dd350017",
+                  "email": "quangnd.nta@gmail.com",
+                  "createdAt": "2024-10-08T01:59:08.062Z",
+                  "updatedAt": "2024-10-08T01:59:08.062Z"
                 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{id}/avatar": {
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Update user avatar",
+        "description": "Upload or update the avatar of a specific user",
+        "operationId": "updateUserAvatar",
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the user to update the avatar",
+            "required": true,
+            "type": "string",
+            "example": "b17b6135-7b85-49b1-acc4-9204dd350017"
+          },
+          {
+            "name": "avatar",
+            "in": "formData",
+            "description": "User avatar file",
+            "required": true,
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "examples": {
+              "application/json": {
+                "code": 200,
+                "message": "Avatar updated successfully",
+                "data": {
+                  "id": "b17b6135-7b85-49b1-acc4-9204dd350017",
+                  "avatarUrl": "https://example.com/uploads/avatar_b17b6135.jpg",
+                  "updatedAt": "2024-10-08T02:15:08.062Z"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input or file format",
+            "examples": {
+              "application/json": {
+                "code": 400,
+                "message": "Invalid file format"
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "examples": {
+              "application/json": {
+                "code": 404,
+                "message": "User not found"
               }
             }
           }
