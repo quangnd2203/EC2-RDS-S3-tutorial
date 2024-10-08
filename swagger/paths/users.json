@@ -89,14 +89,12 @@
           "description": "Successful response",
           "examples": {
             "application/json": {
-              "code": 200,
-              "message": "Avatar updated successfully",
-              "data": {
-                "id": "b17b6135-7b85-49b1-acc4-9204dd350017",
-                "avatarUrl": "https://example.com/uploads/avatar_b17b6135.jpg",
-                "updatedAt": "2024-10-08T02:15:08.062Z"
-              }
-            }
+                "code": 200,
+                "data": {
+                  "id": "234590bf-9577-4d3a-b874-7555297de8c1",
+                  "avatar": "/uploads/8fcb5f39c182f941a933a2200.png"
+                }
+              }              
           }
         },
         "400": {
