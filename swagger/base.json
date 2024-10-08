@@ -5,7 +5,7 @@
     "title": "API Documentation",
     "description": "API description in Markdown."
   },
-  "host": "localhost:3000",
+  "host": "54.168.77.152:3000",
   "basePath": "/",
   "schemes": ["http"],
   "paths": {}
