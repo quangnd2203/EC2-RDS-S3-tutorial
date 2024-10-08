@@ -30,4 +30,9 @@ export default class UserUseCases implements IUserUseCases{
         }
         return null;
     }
+
+    async getAll(): Promise<UserDto[]> {
+        const users = await this.usersRepository.read({id: null, email: null});
+        return users.map(user => container.get<IUserMapper>(TYPES.mappers.IUserMapper).toResponse(user));
+    }
 }

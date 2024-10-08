@@ -46,7 +46,50 @@
                                 "email": "quangnd.nta@gmail.com",
                                 "createdAt": "2024-10-08T01:59:08.062Z",
                                 "updatedAt": "2024-10-08T01:59:08.062Z"
-                              }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "get": {
+            "tags": [
+                "users"
+            ],
+            "summary": "Get all users",
+            "description": "Retrieve a list of all users",
+            "operationId": "getAllUsers",
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [],
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "example": "b17b6135-7b85-49b1-acc4-9204dd350017"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "example@gmail.com"
+                                },
+                                "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2024-10-08T01:59:08.062Z"
+                                },
+                                "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "example": "2024-10-08T01:59:08.062Z"
+                                }
+                            }
                         }
                     }
                 }
@@ -54,68 +97,68 @@
         }
     },
     "/api/users/{id}/avatar": {
-    "patch": {
-      "tags": [
-        "users"
-      ],
-      "summary": "Update user avatar",
-      "description": "Upload or update the avatar of a specific user",
-      "operationId": "updateUserAvatar",
-      "consumes": [
-        "multipart/form-data"
-      ],
-      "produces": [
-        "application/json"
-      ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "ID of the user to update the avatar",
-          "required": true,
-          "type": "string",
-          "example": "b17b6135-7b85-49b1-acc4-9204dd350017"
-        },
-        {
-          "name": "avatar",
-          "in": "formData",
-          "description": "User avatar file",
-          "required": true,
-          "type": "file"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "Successful response",
-          "examples": {
-            "application/json": {
-                "code": 200,
-                "data": {
-                  "id": "234590bf-9577-4d3a-b874-7555297de8c1",
-                  "avatar": "/uploads/8fcb5f39c182f941a933a2200.png"
+        "patch": {
+            "tags": [
+                "users"
+            ],
+            "summary": "Update user avatar",
+            "description": "Upload or update the avatar of a specific user",
+            "operationId": "updateUserAvatar",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "ID of the user to update the avatar",
+                    "required": true,
+                    "type": "string",
+                    "example": "b17b6135-7b85-49b1-acc4-9204dd350017"
+                },
+                {
+                    "name": "avatar",
+                    "in": "formData",
+                    "description": "User avatar file",
+                    "required": true,
+                    "type": "file"
                 }
-              }              
-          }
-        },
-        "400": {
-          "description": "Invalid input or file format",
-          "examples": {
-            "application/json": {
-              "code": 400,
-              "message": "Invalid file format"
+            ],
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "examples": {
+                        "application/json": {
+                            "code": 200,
+                            "data": {
+                                "id": "234590bf-9577-4d3a-b874-7555297de8c1",
+                                "avatar": "/uploads/8fcb5f39c182f941a933a2200.png"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Invalid input or file format",
+                    "examples": {
+                        "application/json": {
+                            "code": 400,
+                            "message": "Invalid file format"
+                        }
+                    }
+                },
+                "404": {
+                    "description": "User not found",
+                    "examples": {
+                        "application/json": {
+                            "code": 404,
+                            "message": "User not found"
+                        }
+                    }
+                }
             }
-          }
-        },
-        "404": {
-          "description": "User not found",
-          "examples": {
-            "application/json": {
-              "code": 404,
-              "message": "User not found"
-            }
-          }
         }
-      }
     }
-  }
 }

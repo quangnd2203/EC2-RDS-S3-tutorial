@@ -16,6 +16,7 @@ import IUserCreateMapper from "src/interface/mappers/user_create.mappers.js";
 import UserCreateMapper from "../mappers/user_create.mappers.js";
 import IStorageFileServices from "src/interface/services/storage_file.services.js";
 import StorageFileLocalServices from "src/infrastructure/services/storage_file.local.services.js";
+import StorageFileS3Services from "src/infrastructure/services/storage_file.s3.services.js";
 
 export const container = new Container();
 
@@ -49,7 +50,8 @@ function injectRepositories(){
 function injectServices(){
     if(process.env.ENV === 'dev')
         container.bind<IStorageFileServices>(TYPES.services.IStorageFileServices).to(StorageFileLocalServices);
-    // container.bind<IService>(TYPES.services.IService).to(Service);
+    else(process.env.ENV === 'prod')
+        container.bind<IStorageFileServices>(TYPES.services.IStorageFileServices).to(StorageFileS3Services);
 }
 
 /* Mappers */

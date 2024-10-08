@@ -19,6 +19,11 @@ export default class UsersRouters {
                 res.status(value.code).send(value);
             });
         });
+        this.router.get('/', async (req, res) => {
+            this.controller.getAll().then((value) => {
+                res.status(value.code).send(value);
+            });
+        });
         this.router.patch('/:id/avatar', async (req, res) => {
             this.controller.updateAvatar(req.params.id, req).then((value) => {
                 res.status(value.code).send(value);

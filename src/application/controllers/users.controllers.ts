@@ -29,4 +29,13 @@ export default class UsersController implements IUsersController {
             return NetworkResponse.fromErrors(STATUS_CODE.bad_request, e.message || 'update_avatar_error');
         }
     }
+
+    async getAll(): Promise<NetworkResponse<UserDto[]>> {
+        try {
+            const usersDto = await this.userUseCases.getAll();
+            return NetworkResponse.success<UserDto[]>(usersDto);
+        } catch (e) {
+            return NetworkResponse.fromErrors(STATUS_CODE.bad_request, e.message || 'get_all_users_error');
+        }
+    }
 }

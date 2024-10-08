@@ -6,4 +6,5 @@ import { Request } from "express";
 export default interface IUsersController {
     create: (request: UserCreateDto) => Promise<NetworkResponse<UserDto>>;
     updateAvatar: (id: string, request: Request) => Promise<NetworkResponse<UserDto>>;
+    getAll: () => Promise<NetworkResponse<UserDto[]>>;
 }

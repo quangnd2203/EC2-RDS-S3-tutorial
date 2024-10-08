@@ -5,4 +5,5 @@ import { Request } from "express";
 export default interface IUserUseCases{
     create: (request: UserCreateDto) => Promise<UserDto>;
     updateAvatar: (id: string, request: Request) => Promise<UserDto>;
+    getAll: () => Promise<UserDto[]>;
 }

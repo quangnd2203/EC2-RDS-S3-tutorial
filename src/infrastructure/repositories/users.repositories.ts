@@ -20,12 +20,15 @@ export default class UsersRepository implements IUsersRepository {
     }
 
     async read(request: UserDto): Promise<User[]> {
-        return UserModel.findAll({
-            where: {
-                id: request.id,
-                email: request.email,
-            }
-        });
+        if(request.id || request.email){
+            return UserModel.findAll({
+                where: {
+                    id: request.id,
+                    email: request.email,
+                }
+            });
+        }
+        return UserModel.findAll();
     }
 
     async update(request: UserCreateDto): Promise<User> {
