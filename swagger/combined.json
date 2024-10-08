@@ -85,8 +85,7 @@
             "in": "path",
             "description": "ID of the user to update the avatar",
             "required": true,
-            "type": "string",
-            "example": "b17b6135-7b85-49b1-acc4-9204dd350017"
+            "type": "string"
           },
           {
             "name": "avatar",
