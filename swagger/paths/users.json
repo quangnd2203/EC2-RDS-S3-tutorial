@@ -160,5 +160,21 @@
                 }
             }
         }
+    },
+    "/api/users/{id}/avatar_test_CICD": {
+        "patch": {
+            "tags": [
+                "users"
+            ],
+            "summary": "TEST_CICD",
+            "description": "TEST_CICD",
+            "operationId": "TEST_CICD",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "application/json"
+            ]
+        }
     }
 }
