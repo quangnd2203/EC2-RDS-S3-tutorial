@@ -48,10 +48,11 @@ function injectRepositories(){
 
 /* Services */
 function injectServices(){
-    if(process.env.ENV === 'dev')
+    if (process.env.ENV === 'dev') {
         container.bind<IStorageFileServices>(TYPES.services.IStorageFileServices).to(StorageFileLocalServices);
-    else(process.env.ENV === 'prod')
+    } else if (process.env.ENV === 'prod') {
         container.bind<IStorageFileServices>(TYPES.services.IStorageFileServices).to(StorageFileS3Services);
+    }
 }
 
 /* Mappers */
