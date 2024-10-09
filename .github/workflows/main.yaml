@@ -17,13 +17,14 @@ jobs:
       
       - name: Connnect to EC2 and pull code from Github
         run: |
-          ssh -i "ec2.pem" -o StrictHostKeyChecking=no ${{ secrets.EC2_CONNECTION }}
+          ssh -i "ec2.pem" -o StrictHostKeyChecking=no ${{ secrets.EC2_CONNECTION }} <<EOF
           cd /home/ec2-user/EC2-RDS-S3-tutorial
           git pull origin master
           make stop
           make clean
           make build
           make prod
+          EOF
 
       - name: Exit And Remove SSH Key
         run: |
