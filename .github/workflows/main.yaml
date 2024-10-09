@@ -21,7 +21,7 @@ jobs:
       
       - name: Pull code from Github
         run: |
-          cd cd /home/ec2-user/EC2-RDS-S3-tutorial
+          cd /home/ec2-user/EC2-RDS-S3-tutorial
           git pull origin master
           make stop
           make clean
