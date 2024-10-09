@@ -19,8 +19,9 @@ jobs:
         run: |
           ssh -i "ec2.pem" -o StrictHostKeyChecking=no ${{ secrets.EC2_CONNECTION }}
       
-      - name: Pull code from Github
+      - name: EC2 Pull code from Github
         run: |
+          ls - la
           cd /home/ec2-user/EC2-RDS-S3-tutorial
           git pull origin master
           make stop
