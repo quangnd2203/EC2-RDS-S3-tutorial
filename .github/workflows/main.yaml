@@ -15,21 +15,16 @@ jobs:
           echo "${{ secrets.EC2_SSH_KEY }}" > ec2.pem
           chmod 400 ec2.pem
       
-      - name: Connnect to EC2
+      - name: Connnect to EC2 and pull code from Github
         run: |
           ssh -i "ec2.pem" -o StrictHostKeyChecking=no ${{ secrets.EC2_CONNECTION }}
-      
-      - name: EC2 Pull code from Github
-        run: |
-          ls -la
           cd /home/ec2-user/EC2-RDS-S3-tutorial
           git pull origin master
           make stop
           make clean
           make build
           make prod
-      
+
       - name: Exit And Remove SSH Key
         run: |
-          exit
           rm ec2.pem
