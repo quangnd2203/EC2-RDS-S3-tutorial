@@ -17,4 +17,10 @@ initSwagger().then(() => {
     createAPI().listen(process.env.SERVER_PORT, () => {
         logger.info(`Server running on port ${process.env.SERVER_PORT}`);
     });
+
+    if(process.env.ENV == 'prod') {
+        createAPI().listen(process.env.HTTPS_SERVER_PORT, () => {
+            logger.info(`Server running on port https ${process.env.SERVER_PORT}`);
+        });
+    }
 });
