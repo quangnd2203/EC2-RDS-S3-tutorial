@@ -27,6 +27,9 @@ export default function createAPI(): Application {
 
     api.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
     api.use('/api', new Routers().getRouters());
+    api.use('/', (req, res) => {
+        res.status(200).send('Welcome to API');
+    });
     api.use((req, res, next) => {
         next(NetworkResponse.fromErrors(STATUS_CODE.not_found, 'not_found'));
     });
