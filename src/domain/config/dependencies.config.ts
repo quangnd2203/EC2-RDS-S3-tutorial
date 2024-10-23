@@ -17,6 +17,14 @@ import UserCreateMapper from "../mappers/user_create.mappers.js";
 import IStorageFileServices from "src/interface/services/storage_file.services.js";
 import StorageFileLocalServices from "src/infrastructure/services/storage_file.local.services.js";
 import StorageFileS3Services from "src/infrastructure/services/storage_file.s3.services.js";
+import ISocialUseCases from "src/interface/usercases/social.usecases.js";
+import SocialUsecases from "../usercases/social.usecases.js";
+import IFirebaseRepository from "src/interface/repositories/firebase.repositories.js";
+import FirebaseRepository from "src/infrastructure/repositories/firebase.repositories.js";
+import IUserUpdateMapper from "src/interface/mappers/user_update.mappers.js";
+import UserUpdateMapper from "../mappers/user_update.mappers.js";
+import ISocialController from "src/interface/controllers/social.controllers.js";
+import SocialController from "src/application/controllers/social.controllers.js";
 
 export const container = new Container();
 
@@ -31,18 +39,20 @@ export function inject() {
 /* Controllers */
 function injectControllers(){
     container.bind<IUsersController>(TYPES.controller.IUsersController).to(UsersController);
-
+    container.bind<ISocialController>(TYPES.controller.ISocialController).to(SocialController);
 }
 
 /* Use Cases */
 function injectUseCases(){
     container.bind<IUserUseCases>(TYPES.useCases.IUserUseCases).to(UserUseCases);
+    container.bind<ISocialUseCases>(TYPES.useCases.ISocialUseCases).to(SocialUsecases);
 
 }
 
 /* Repositories */
 function injectRepositories(){
     container.bind<IUsersRepository>(TYPES.repositories.IUsersRepository).to(UsersRepository);
+    container.bind<IFirebaseRepository>(TYPES.repositories.IFirebaseRepository).to(FirebaseRepository);
 
 }
 
@@ -59,4 +69,5 @@ function injectServices(){
 function injectMappers(){
     container.bind<IUserMapper>(TYPES.mappers.IUserMapper).to(UserMapper);
     container.bind<IUserCreateMapper>(TYPES.mappers.IUserCreateMapper).to(UserCreateMapper);
+    container.bind<IUserUpdateMapper>(TYPES.mappers.IUserUpdateMapper).to(UserUpdateMapper);
 }

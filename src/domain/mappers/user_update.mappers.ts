@@ -1,16 +1,14 @@
 import User from "../entities/user.entities.js";
 import { injectable } from "inversify";
-import IUserCreateMapper from "src/interface/mappers/user_create.mappers.js";
-import UserCreateDto from "../dtos/user_create.dtos.js";
+import IUserUpdateMapper from "src/interface/mappers/user_update.mappers.js";
+import UserUpdateDto from "../dtos/user_update.dtos.js";
 
 @injectable()
-export default class UserCreateMapper implements IUserCreateMapper{
+export default class UserUpdateMapper implements IUserUpdateMapper{
 
     toResponse(entity: User) {
-        return new UserCreateDto({
+        return new UserUpdateDto({
             id: entity.id,
-            firebaseId: entity.firebaseId,
-            type: entity.type,
             refreshToken: entity.refreshToken,
             email: entity.email,
             avatar: entity.avatar,
@@ -19,11 +17,11 @@ export default class UserCreateMapper implements IUserCreateMapper{
         });
     }
 
-    toDomain(dto: UserCreateDto): User {
+    toDomain(dto: UserUpdateDto): User {
         return new User({
             id: dto.id,
-            firebaseId: dto.firebaseId,
-            type: dto.type,
+            firebaseId: null,
+            type: null,
             refreshToken: dto.refreshToken,
             email: dto.email,
             avatar: dto.avatar,

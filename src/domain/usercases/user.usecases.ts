@@ -8,6 +8,7 @@ import { container } from "../config/dependencies.config.js";
 import IUserMapper from "src/interface/mappers/user.mappers.js";
 import { Request } from "express";
 import IStorageFileServices from "src/interface/services/storage_file.services.js";
+import UserUpdateDto from "../dtos/user_update.dtos.js";
 
 @injectable()
 export default class UserUseCases implements IUserUseCases{
@@ -17,6 +18,14 @@ export default class UserUseCases implements IUserUseCases{
     async create(request: UserCreateDto): Promise<UserDto> {
         const user = await this.usersRepository.create(request);
         return container.get<IUserMapper>(TYPES.mappers.IUserMapper).toResponse(user);
+    }
+
+    async login(request: UserCreateDto): Promise<UserDto> {
+        throw new Error("Method not implemented.");
+    }
+
+    async updateProfile(id: string, request: UserUpdateDto): Promise<UserDto> {
+        throw new Error("Method not implemented.");
     }
 
     async updateAvatar(id: string, request: Request): Promise<UserDto> {

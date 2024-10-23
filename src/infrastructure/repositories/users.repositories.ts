@@ -6,9 +6,10 @@ import UserModel from "../models/user.models.js";
 import { container } from "src/domain/config/dependencies.config.js";
 import TYPES from "src/domain/config/types.js";
 import UserDto from "src/domain/dtos/user.dtos.js";
-import IUserMapper from "src/interface/mappers/user.mappers.js";
 import UserCreateDto from "src/domain/dtos/user_create.dtos.js";
 import IUserCreateMapper from "src/interface/mappers/user_create.mappers.js";
+import UserUpdateDto from "src/domain/dtos/user_update.dtos.js";
+import IUserUpdateMapper from "src/interface/mappers/user_update.mappers.js";
 
 @injectable()
 export default class UsersRepository implements IUsersRepository {
@@ -31,8 +32,8 @@ export default class UsersRepository implements IUsersRepository {
         return UserModel.findAll();
     }
 
-    async update(request: UserCreateDto): Promise<User> {
-        const user: User = container.get<IUserCreateMapper>(TYPES.mappers.IUserCreateMapper).toDomain(request);
+    async update(request: UserUpdateDto): Promise<User> {
+        const user: User = container.get<IUserUpdateMapper>(TYPES.mappers.IUserUpdateMapper).toDomain(request);
         await UserModel.update(request, {
             where: {
                 id: request.id,

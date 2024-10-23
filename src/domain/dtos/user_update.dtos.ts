@@ -1,5 +1,6 @@
-export default class UserDto {
+export default class UserUpdateDto {
     id: string;
+    refreshToken?: string;
     name?: string;
     email?: string;
     avatar?: string;
@@ -8,6 +9,7 @@ export default class UserDto {
 
     constructor({
         id,
+        refreshToken,
         name,
         email,
         avatar,
@@ -15,13 +17,16 @@ export default class UserDto {
         updatedAt,
     }: {
         id: string;
+        refreshToken?: string;
         name?: string;
         email?: string;
+        password?: string;
         avatar?: string;
         createdAt?: Date;
         updatedAt?: Date;
     }) {
         this.id = id;
+        this.refreshToken = refreshToken
         this.name = name;
         this.email = email;
         this.avatar = avatar;

@@ -4,8 +4,11 @@ import User from 'src/domain/entities/user.entities.js';
 
 class UserModel extends Model<User> implements User {
     id: string;
+    firebaseId: string;
+    type: string;
+    refreshToken?: string;
+    name?: string;
     email: string;
-    password: string;
     avatar?: string;
     createdAt?: Date;
     updatedAt?: Date;
@@ -19,12 +22,24 @@ UserModel.init(
             primaryKey: true,
             allowNull: false
         },
-        email: {
+        firebaseId: {
             type: DataTypes.STRING,
-            unique: 'email',
+            allowNull: false,
+            unique: 'firebaseId',
+        },
+        type: {
+            type: DataTypes.ENUM('google', 'facebook'),
             allowNull: false,
         },
-        password: {
+        refreshToken: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
         },

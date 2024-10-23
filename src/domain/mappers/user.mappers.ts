@@ -9,6 +9,7 @@ export default class UserMapper implements IUserMapper{
     toResponse(entity: User) {
         return new UserDto({
             id: entity.id,
+            name: entity.name,
             email: entity.email,
             avatar: entity.avatar,
             createdAt: entity.createdAt,
@@ -19,8 +20,10 @@ export default class UserMapper implements IUserMapper{
     toDomain(dto: UserDto): User {
         return new User({
             id: dto.id,
+            firebaseId: null,
+            type: null,
             email: dto.email,
-            password: null,
+            name: dto.name,
             avatar: dto.avatar,
             createdAt: dto.createdAt,
             updatedAt: dto.updatedAt,

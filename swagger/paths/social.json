@@ -1,0 +1,29 @@
+{
+    "/api/social/google": {
+        "post": {
+            "tags": [
+                "social"
+            ],
+            "summary": "Login social with google",
+            "operationId": "socialLoginGoogle",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "responses": {
+                "200": {
+                    "description": "Successful response",
+                    "examples": {
+                        "application/json": {
+                            "code": 200,
+                            "message": null,
+                            "data": "firebaseToken"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
