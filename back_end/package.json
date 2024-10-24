@@ -1,0 +1,43 @@
+{
+  "name": "erc20-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "tsx watch --ignore './swagger/**/*' src/app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/formidable": "^3.4.5",
+    "aws-sdk": "^2.1691.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.18.0",
+    "firebase-admin": "^12.6.0",
+    "formidable": "^3.5.1",
+    "fs": "^0.0.1-security",
+    "inversify": "^6.0.2",
+    "mariadb": "^3.3.2",
+    "npm": "^10.5.1",
+    "path": "^0.12.7",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "tslib": "^2.6.2",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.7.4",
+    "@types/sequelize": "^4.28.20",
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.2",
+    "typescript": "^5.6.2"
+  }
+}
