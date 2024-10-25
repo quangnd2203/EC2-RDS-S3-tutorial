@@ -1,7 +1,7 @@
 import { injectable } from "inversify";
 import IFirebaseRepository from "src/interface/repositories/firebase.repositories.js";
 import { DecodedIdToken, getAuth, UserRecord } from "firebase-admin/auth";
-import logger from "src/domain/config/logger.config.js";
+import logger from "src/common/config/logger.config.js";
 
 @injectable()
 export default class FirebaseRepository implements IFirebaseRepository{

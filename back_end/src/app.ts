@@ -1,10 +1,10 @@
 import * as dotenv from 'dotenv';
-import createAPI from './domain/config/api.config.js';
-import { connectDatabase } from './domain/config/database.config.js';
-import logger from './domain/config/logger.config.js';
-import initSwagger from './domain/config/swagger.js';
-import { inject } from './domain/config/dependencies.config.js';
-import {initializeFirebaseAdmin} from './domain/config/firebase.config.js';
+import createAPI from './common/config/api.config.js';
+import { connectDatabase } from './common/config/database.config.js';
+import logger from './common/config/logger.config.js';
+import initSwagger from './common/config/swagger.js';
+import { inject } from './common/config/dependencies.config.js';
+import {initializeFirebaseAdmin} from './common/config/firebase.config.js';
 
 
 initSwagger().then(() => {

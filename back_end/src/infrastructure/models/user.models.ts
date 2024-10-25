@@ -1,5 +1,5 @@
 import { DataTypes, Model, UUIDV4 } from 'sequelize';
-import sequelize from 'src/domain/config/database.config.js';
+import sequelize from 'src/common/config/database.config.js';
 import User from 'src/domain/entities/user.entities.js';
 
 class UserModel extends Model<User> implements User {

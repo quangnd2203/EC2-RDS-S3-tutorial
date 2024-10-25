@@ -1,6 +1,6 @@
 import * as express from 'express';
-import { container } from 'src/domain/config/dependencies.config.js';
-import TYPES from 'src/domain/config/types.js';
+import { container } from 'src/common/config/dependencies.config.js';
+import TYPES from 'src/common/config/types.js';
 import IUsersController from 'src/interface/controllers/users.controllers.js';
 
 export default class UsersRouters {

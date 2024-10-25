@@ -2,7 +2,7 @@ import { injectable, inject } from "inversify";
 import "reflect-metadata";
 import { NetworkResponse, STATUS_CODE } from "src/domain/entities/network_response.entities.js";
 import IUsersController from "src/interface/controllers/users.controllers.js";
-import TYPES from "src/domain/config/types.js";
+import TYPES from "src/common/config/types.js";
 import UserCreateDto from "src/domain/dtos/user_create.dtos.js";
 import UserDto from "src/domain/dtos/user.dtos.js";
 import IUserUseCases from "src/interface/usercases/user.usecases.js";
