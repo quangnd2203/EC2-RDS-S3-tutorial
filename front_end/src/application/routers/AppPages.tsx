@@ -2,8 +2,8 @@
 import { Route, Routes } from 'react-router-dom';
 import AppRouters from './appRouters';
 import DashboardScreen from 'application/features/dashboard/dashboard';
-import LoginScreen from 'application/features/login/login';
 import SplashScreen from 'application/features/splash/splash';
+import LoginScreen from 'application/features/login/login';
 
 const AppPages = () => {
     return (
