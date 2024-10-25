@@ -6,13 +6,13 @@ import LoginScreen from '../features/login/login';
 import DashboardScreen from '../features/dashboard/dashboard';
 
 const AppPages = () => {
-  return (
-    <Routes>
-      <Route path={AppRouters.SPLASH} element={<SplashScreen />} />
-      <Route path={AppRouters.LOGIN} element={<LoginScreen />} />
-      <Route path={AppRouters.DASHBOARD} element={<DashboardScreen />} />
-    </Routes>
-  );
+    return (
+        <Routes>
+            <Route path={AppRouters.SPLASH} element={<SplashScreen />} />
+            <Route path={AppRouters.LOGIN} element={<LoginScreen />} />
+            <Route path={AppRouters.DASHBOARD} element={<DashboardScreen />} />
+        </Routes>
+    );
 };
 
 export default AppPages;

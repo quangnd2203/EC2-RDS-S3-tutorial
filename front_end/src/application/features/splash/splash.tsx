@@ -9,13 +9,8 @@ export default function SplashScreen() {
         navigate(AppRouters.LOGIN); // Điều hướng đến trang Login sau 3 giây
     }, 3000);
     return (
-        <Box
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
-            height='100vh'
-        >
-            <Typography variant="h1">Splash Screen</Typography>
+        <Box display='flex' alignItems='center' justifyContent='center' height='100vh'>
+            <Typography variant='h1'>Splash Screen</Typography>
         </Box>
     );
 }
