@@ -1,3 +1,3 @@
-import DashboardScreen from "./dashboard";
+import DashboardScreen from './Dashboard';
 
 export default DashboardScreen;

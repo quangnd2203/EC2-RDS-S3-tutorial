@@ -1,7 +1,8 @@
 const AppRouters = {
     SPLASH: '/',
     LOGIN: '/login',
-    DASHBOARD: '/dashboard'
+    DASHBOARD: '/dashboard',
+    BLOG: '/blog'
 };
 
 export default AppRouters;

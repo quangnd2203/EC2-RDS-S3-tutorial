@@ -1,3 +1,3 @@
-import SplashScreen from "./splash";
+import SplashScreen from './Splash';
 
 export default SplashScreen;

@@ -1,5 +1,5 @@
-import store from "./store";
-import counterReducer from "./counterSlice";
+import counterReducer from './counterSlice';
+import store from './store';
 
 export default store;
 export { counterReducer };

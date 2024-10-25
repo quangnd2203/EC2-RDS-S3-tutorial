@@ -6,7 +6,7 @@ import AppRouters from '../../routers/appRouters';
 export default function SplashScreen() {
     const navigate = useNavigate();
     setTimeout(() => {
-        navigate(AppRouters.LOGIN); // Điều hướng đến trang Login sau 3 giây
+        navigate(AppRouters.BLOG);
     }, 3000);
     return (
         <Box display='flex' alignItems='center' justifyContent='center' height='100vh'>
