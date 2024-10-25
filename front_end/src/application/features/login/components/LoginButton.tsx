@@ -8,20 +8,9 @@ interface LoginButtonProps {
     children: React.ReactNode;
 }
 
-export default function LoginButton({
-    color = 'primary',
-    onClick,
-    disabled = false,
-    children,
-}: LoginButtonProps) {
+export default function LoginButton({ color = 'primary', onClick, disabled = false, children }: LoginButtonProps) {
     return (
-        <Button
-            variant="contained"
-            color={color}
-            onClick={onClick}
-            disabled={disabled}
-            sx={{ width: 200 }}
-        >
+        <Button variant='contained' color={color} onClick={onClick} disabled={disabled} sx={{ width: 200 }}>
             {children}
         </Button>
     );
