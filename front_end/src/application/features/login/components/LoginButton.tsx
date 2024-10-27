@@ -1,16 +1,24 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, SxProps, Theme } from '@mui/material';
 
 interface LoginButtonProps {
     color?: 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning';
     onClick?: () => void;
     disabled?: boolean;
     children: React.ReactNode;
+    sx?: SxProps<Theme>;
 }
 
-export default function LoginButton({ color = 'primary', onClick, disabled = false, children }: LoginButtonProps) {
+export default function LoginButton({ color = 'primary', onClick, disabled = false, children, sx }: LoginButtonProps) {
     return (
-        <Button variant='contained' color={color} onClick={onClick} disabled={disabled} sx={{ width: 200 }}>
+        <Button
+            variant='outlined'
+            color={color}
+            onClick={onClick}
+            disabled={disabled}
+            fullWidth={true}
+            sx={{ borderRadius: 2, textTransform: 'none', ...sx }}
+        >
             {children}
         </Button>
     );
