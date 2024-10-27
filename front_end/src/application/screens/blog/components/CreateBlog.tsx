@@ -1,5 +1,5 @@
 import { Box, TextField } from '@mui/material';
-import LoginButton from 'application/features/login/components/LoginButton';
+import LoginButton from 'application/screens/login/components/LoginButton';
 import React from 'react';
 
 export default function CreateBlog() {

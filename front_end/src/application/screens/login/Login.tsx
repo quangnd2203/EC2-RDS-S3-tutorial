@@ -5,12 +5,7 @@ import { AppleIcon, FacebookIcon, GoogleIcon } from './components/LoginIcon';
 
 export default function LoginScreen() {
     return (
-        <Box
-            display='flex'
-            justifyContent='center' // Căn giữa theo chiều ngang
-            alignItems='center' // Căn giữa theo chiều dọc
-            height='100vh'
-        >
+        <Box display='flex' justifyContent='center' alignItems='center' height='100vh'>
             <Box
                 flexDirection='column'
                 gap={2}
@@ -28,13 +23,34 @@ export default function LoginScreen() {
                     Kanban Board Project
                 </Typography>
                 <Typography align='center'>Please login to continue</Typography>
-                <LoginButton sx={{ background: 'linear-gradient(0deg, #000000, #434343)', borderColor: 'black', gap: 1, color: 'white' }}>
-                    <AppleIcon  /> Continue with Apple
+                <LoginButton
+                    sx={{
+                        background: 'linear-gradient(0deg, #000000, #434343)',
+                        borderColor: 'black',
+                        gap: 1,
+                        color: 'white'
+                    }}
+                >
+                    <AppleIcon /> Continue with Apple
                 </LoginButton>
-                <LoginButton sx={{ background: 'white', borderColor: '#D8D8D8', gap: 1, color: 'black' }}>
+                <LoginButton
+                    sx={{
+                        background: 'white',
+                        borderColor: '#D8D8D8',
+                        gap: 1,
+                        color: 'black'
+                    }}
+                >
                     <GoogleIcon /> Continue with Google
                 </LoginButton>
-                <LoginButton sx={{ background: 'white', borderColor: '#D8D8D8', gap: 1, color: 'black' }}>
+                <LoginButton
+                    sx={{
+                        background: 'white',
+                        borderColor: '#D8D8D8',
+                        gap: 1,
+                        color: 'black'
+                    }}
+                >
                     <FacebookIcon /> Continue with Facebook
                 </LoginButton>
             </Box>

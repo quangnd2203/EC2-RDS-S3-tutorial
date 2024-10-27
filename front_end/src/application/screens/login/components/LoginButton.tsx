@@ -17,7 +17,7 @@ export default function LoginButton({ color = 'primary', onClick, disabled = fal
             onClick={onClick}
             disabled={disabled}
             fullWidth={true}
-            sx={{ borderRadius: 2, textTransform: 'none', ...sx }}
+            sx={{ borderRadius: 2, textTransform: 'none', fontWeight: 'normal', ...sx }}
         >
             {children}
         </Button>

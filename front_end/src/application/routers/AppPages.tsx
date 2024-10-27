@@ -1,10 +1,10 @@
 // AppPages.js
 import { Route, Routes } from 'react-router-dom';
-import AppRouters from './appRouters';
-import SplashScreen from 'application/features/splash';
-import LoginScreen from 'application/features/login';
-import DashboardScreen from 'application/features/dashboard';
-import BlogScreen from 'application/features/blog';
+import AppRouters from './AppRouters';
+import SplashScreen from 'application/screens/splash';
+import LoginScreen from 'application/screens/login';
+import DashboardScreen from 'application/screens/dashboard';
+import BlogScreen from 'application/screens/blog';
 
 const AppPages = () => {
     return (
