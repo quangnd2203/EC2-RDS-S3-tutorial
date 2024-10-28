@@ -9,7 +9,7 @@ export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
             const result = await firebase.signInWithPopup(firebase.getAuth(), new firebase.GoogleAuthProvider());
             return result.user.getIdToken();
         } catch (error) {
-            throw new Error('Google auth failed');
+            throw error;
         }
     }
 
@@ -18,7 +18,7 @@ export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
             const result = await firebase.signInWithPopup(firebase.getAuth(), new firebase.FacebookAuthProvider());
             return result.user.getIdToken();
         } catch (error) {
-            throw new Error('Facebook auth failed');
+            throw error;
         }
     }
 
@@ -27,7 +27,7 @@ export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
             const result = await firebase.signInWithPopup(firebase.getAuth(), new firebase.OAuthProvider('apple.com'));
             return result.user.getIdToken();
         } catch (error) {
-            throw new Error('Apple auth failed');
+            throw error;
         }
     }
 }

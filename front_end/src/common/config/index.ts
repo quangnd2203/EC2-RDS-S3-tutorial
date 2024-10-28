@@ -1,4 +1,5 @@
-import { AppDependencies, injectDependencies } from './AppDependencies';
-import TYPES from './Types';
+import { appDependencies, injectDependencies } from './app-dependencies';
+import TYPES from './types';
+import apiClient from './app-client';
 
-export { TYPES, AppDependencies, injectDependencies };
+export { TYPES, appDependencies, injectDependencies, apiClient };

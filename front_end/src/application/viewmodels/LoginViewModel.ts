@@ -1,4 +1,4 @@
-import { AppDependencies, TYPES } from "common/config";
+import { appDependencies, TYPES } from "common/config";
 import { IAuthenticationUseCase } from "interface/usecases";
 
 export default class LoginViewModel {
@@ -6,7 +6,7 @@ export default class LoginViewModel {
     private authenticationUseCase: IAuthenticationUseCase;
 
     constructor() {
-        this.authenticationUseCase = AppDependencies.get<IAuthenticationUseCase>(TYPES.useCases.IAuthenticationUseCase);
+        this.authenticationUseCase = appDependencies.get<IAuthenticationUseCase>(TYPES.useCases.IAuthenticationUseCase);
     }
 
     async loginGoogle() {

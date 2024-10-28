@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { injectDependencies } from 'common/config';
-import { initializeFirebaseApp } from 'common/config/AppFirebase';
+import { initializeFirebaseApp } from 'common/config/app-firebase';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 injectDependencies();
