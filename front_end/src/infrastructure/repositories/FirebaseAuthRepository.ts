@@ -1,9 +1,7 @@
-import { AppFirebase } from "common/config/AppFirebase";
-import { IFirebaseAuthRepository } from "interface/repositories";
-import * as firebase from "firebase/auth";
+import { IFirebaseAuthRepository } from 'interface/repositories';
+import * as firebase from 'firebase/auth';
 
 export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
-
     async googleAuth(): Promise<string> {
         try {
             const result = await firebase.signInWithPopup(firebase.getAuth(), new firebase.GoogleAuthProvider());
@@ -11,7 +9,6 @@ export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
         } catch (error) {
             throw new Error('Google auth failed');
         }
-
     }
 
     async facebookAuth(): Promise<string> {
@@ -31,5 +28,4 @@ export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
             throw new Error('Apple auth failed');
         }
     }
-
 }

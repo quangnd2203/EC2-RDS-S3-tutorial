@@ -1,4 +1,4 @@
 import { AppDependencies, injectDependencies } from './AppDependencies';
-import TYPES from './types';
+import TYPES from './Types';
 
 export { AppDependencies, injectDependencies, TYPES };

@@ -1,22 +1,12 @@
 const TYPES = {
-    controller: {
-        IUsersController: Symbol.for('IUsersController')
-    },
     useCases: {
-        IUserUseCases: Symbol.for('IUserUseCases')
+        IAuthenticationUseCase: Symbol.for('IAuthenticationUseCase')
     },
     repositories: {
-        IUsersRepository: Symbol.for('IUsersRepository'),
-        IFirebaseRepository: Symbol.for('IFirebaseRepository')
+        IFirebaseAuthRepository: Symbol.for('IFirebaseAuthRepository')
     },
-    services: {
-        IStorageFileServices: Symbol.for('IStorageFileServices')
-    },
-    mappers: {
-        IUserMapper: Symbol.for('IUserMapper'),
-        IUserCreateMapper: Symbol.for('IUserCreateMapper'),
-        IUserUpdateMapper: Symbol.for('IUserUpdateMapper')
-    }
+    services: {},
+    mappers: {}
 };
 
 export default TYPES;

@@ -1,3 +1,11 @@
 import { initializeApp } from 'firebase/app';
 
-export const AppFirebase = initializeApp(JSON.parse(process.env.FIREBASE_CLIENT_CONFIG as string));
+var AppFirebase;
+
+function initializeFirebaseApp() {
+    AppFirebase = initializeApp(JSON.parse(process.env.FIREBASE_CLIENT_CONFIG as string));
+}
+
+export default AppFirebase;
+
+export { initializeFirebaseApp };
