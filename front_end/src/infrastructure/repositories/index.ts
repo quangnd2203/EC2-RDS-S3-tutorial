@@ -1,3 +1,3 @@
-import FirebaseAuthRepository from "./FirebaseAuthRepository";
+import FirebaseAuthRepository from './FirebaseAuthRepository';
 
-export {FirebaseAuthRepository};
+export { FirebaseAuthRepository };

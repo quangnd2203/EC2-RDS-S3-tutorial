@@ -1,7 +1,23 @@
+import { AppDependencies, TYPES } from "common/config";
+import { IAuthenticationUseCase } from "interface/usecases";
+
 export default class LoginViewModel {
-    async loginGoogle() {}
+    
+    private authenticationUseCase: IAuthenticationUseCase;
 
-    async loginFacebook() {}
+    constructor() {
+        this.authenticationUseCase = AppDependencies.get<IAuthenticationUseCase>(TYPES.useCases.IAuthenticationUseCase);
+    }
 
-    async loginApple() {}
+    async loginGoogle() {
+        this.authenticationUseCase.login({type: 'google'});
+    }
+
+    async loginFacebook() {
+        this.authenticationUseCase.login({type: 'facebook'});
+    }
+
+    async loginApple() {
+        this.authenticationUseCase.login({type: 'apple'});
+    }
 }

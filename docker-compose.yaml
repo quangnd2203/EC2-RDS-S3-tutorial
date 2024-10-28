@@ -34,8 +34,8 @@ services:
       dockerfile: ./.docker/web.DockerFile
     environment:
       PORT: ${WEB_PORT}
-      ENV: ${ENV}
-      FIREBASE_CLIENT_CONFIG: ${FIREBASE_CLIENT_CONFIG}
+      REACT_APP_ENV: ${ENV}
+      REACT_APP_FIREBASE_CLIENT_CONFIG: ${REACT_APP_FIREBASE_CLIENT_CONFIG}
     ports:
       - ${WEB_PORT}:${WEB_PORT}
     volumes:

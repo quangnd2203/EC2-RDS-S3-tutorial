@@ -2,20 +2,20 @@ import React from 'react';
 import './App.css';
 import AppPages from 'application/routers';
 import { Provider } from 'react-redux';
+import { Provider as InversifyProvider } from 'inversify-react';
 import store from 'application/redux';
 import { BrowserRouter } from 'react-router-dom';
-import { injectDependencies } from 'common/config';
-import { initializeFirebaseApp } from 'common/config/AppFirebase';
+import { AppDependencies } from 'common/config';
 
 function App() {
-    injectDependencies();
-    initializeFirebaseApp();
     return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <AppPages></AppPages>
-            </BrowserRouter>
-        </Provider>
+        <InversifyProvider container={AppDependencies}>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <AppPages></AppPages>
+                </BrowserRouter>
+            </Provider>
+        </InversifyProvider>
     );
 }
 

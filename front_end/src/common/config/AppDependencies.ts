@@ -8,6 +8,7 @@ import { AuthenticationUseCase } from 'domain/usecases';
 export const AppDependencies = new Container();
 
 export function injectDependencies() {
+    console.log('injectDependencies');
     injectUseCases();
     injectRepositories();
     injectServices();

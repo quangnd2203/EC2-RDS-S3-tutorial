@@ -1,3 +1,3 @@
-import AuthenticationUseCase from "./IAuthenticationUseCase";
+import AuthenticationUseCase from './AuthenticationUseCase';
 
 export { AuthenticationUseCase };

@@ -1,6 +1,8 @@
 import { IFirebaseAuthRepository } from 'interface/repositories';
 import * as firebase from 'firebase/auth';
+import { injectable } from 'inversify';
 
+@injectable()
 export default class FirebaseAuthRepository implements IFirebaseAuthRepository {
     async googleAuth(): Promise<string> {
         try {

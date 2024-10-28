@@ -2,8 +2,10 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import LoginButton from './components/LoginButton';
 import { AppleIcon, FacebookIcon, GoogleIcon } from './components/LoginIcon';
+import { LoginViewModel } from 'application/viewmodels';
 
 export default function LoginScreen() {
+    const loginViewModel = new LoginViewModel();
     return (
         <Box display='flex' justifyContent='center' alignItems='center' height='100vh'>
             <Box
@@ -24,6 +26,7 @@ export default function LoginScreen() {
                 </Typography>
                 <Typography align='center'>Please login to continue</Typography>
                 <LoginButton
+                    onClick={() => loginViewModel.loginApple()}
                     sx={{
                         background: 'linear-gradient(0deg, #000000, #434343)',
                         borderColor: 'black',
@@ -34,6 +37,7 @@ export default function LoginScreen() {
                     <AppleIcon /> Continue with Apple
                 </LoginButton>
                 <LoginButton
+                    onClick={() => loginViewModel.loginGoogle()}
                     sx={{
                         background: 'white',
                         borderColor: '#D8D8D8',
@@ -44,6 +48,7 @@ export default function LoginScreen() {
                     <GoogleIcon /> Continue with Google
                 </LoginButton>
                 <LoginButton
+                    onClick={() => loginViewModel.loginFacebook()}
                     sx={{
                         background: 'white',
                         borderColor: '#D8D8D8',
